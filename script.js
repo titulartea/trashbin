@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", function () {
   submitBtn.addEventListener("click", async function () {
     const password = passwordInput.value;
     const description = descriptionInput.value.trim();
-    if (password !== "firmament") {
+    if (password !== "america") {
       alert("비밀번호가 틀렸습니다!");
       return;
     }
@@ -334,7 +334,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const btnEditPhoto = document.getElementById("btnEditPhoto");
   btnEditPhoto.addEventListener("click", async function () {
     const pwd = prompt("수정을 위해 비밀번호를 입력하세요");
-    if (pwd !== "firmament") {
+    if (pwd !== "america") {
       alert("비밀번호가 틀렸습니다!");
       return;
     }
@@ -420,7 +420,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const btnDeletePhoto = document.getElementById("btnDeletePhoto");
   btnDeletePhoto.addEventListener("click", async function () {
     const pwd = prompt("삭제를 위해 비밀번호를 입력하세요");
-    if (pwd !== "firmament") {
+    if (pwd !== "america") {
       alert("비밀번호가 틀렸습니다!");
       return;
     }
@@ -484,7 +484,7 @@ document.addEventListener("DOMContentLoaded", function () {
         delBtn.addEventListener("click", async function (e) {
           e.stopPropagation();
           const pwd = prompt("삭제를 위해 비밀번호를 입력하세요");
-          if (pwd !== "firmament") {
+          if (pwd !== "america") {
             alert("비밀번호가 틀렸습니다!");
             return;
           }
@@ -587,7 +587,7 @@ document.addEventListener("DOMContentLoaded", function () {
   submitRecBtn.addEventListener("click", async function () {
     const password = recPasswordInput.value;
     const description = recDescriptionInput.value.trim();
-    if (password !== "firmament") {
+    if (password !== "america") {
       alert("비밀번호가 틀렸습니다!");
       return;
     }
@@ -655,7 +655,7 @@ document.addEventListener("DOMContentLoaded", function () {
         delBtn.style.color = "white";
         delBtn.addEventListener("click", async function () {
           const pwd = prompt("삭제를 위해 비밀번호를 입력하세요");
-          if (pwd !== "firmament") {
+          if (pwd !== "america") {
             alert("비밀번호가 틀렸습니다!");
             return;
           }
