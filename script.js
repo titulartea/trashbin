@@ -778,3 +778,9 @@ function subscribeToNotifications() {
     })
     .subscribe();
 }
+document.querySelectorAll(".dropdown-btn").forEach((button) => {
+  button.addEventListener("click", function () {
+    const dropdown = this.parentElement;
+    dropdown.classList.toggle("active");
+  });
+});
