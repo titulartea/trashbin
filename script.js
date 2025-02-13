@@ -688,6 +688,60 @@ document.addEventListener("DOMContentLoaded", function () {
     imageDescription.textContent = description || "설명이 없습니다.";
     imageModal.style.display = "flex";
   }
+  function openImageModal(index, animate = false) {
+    const galleryItems = Array.from(
+      gallery.querySelectorAll(".gallery-item img")
+    );
+    const targetImg = galleryItems[index];
+    if (!targetImg) return;
+    currentPhotoRecord = {
+      id: targetImg.getAttribute("data-id"),
+      url: targetImg.src,
+      description:
+        targetImg.getAttribute("data-description") || "설명이 없습니다.",
+      element: targetImg.parentElement,
+    };
+    if (animate) {
+      modalImage.style.opacity = 0;
+      setTimeout(() => {
+        modalImage.src = targetImg.src;
+        imageDescription.textContent = currentPhotoRecord.description;
+      }, 300);
+      setTimeout(() => {
+        modalImage.style.opacity = 1;
+      }, 350);
+    } else {
+      modalImage.src = targetImg.src;
+      imageDescription.textContent = currentPhotoRecord.description;
+    }
+    // 확대/축소 초기화
+    currentScale = 1.0;
+    modalImage.style.transform = `scale(${currentScale})`;
+    imageModal.style.display = "flex";
+
+    // Add a history state
+    history.pushState({ modalOpen: true }, null, "");
+  }
+
+  closeImageBtn.addEventListener("click", function () {
+    imageModal.style.display = "none";
+    // Go back in history when modal is closed
+    history.back();
+  });
+
+  imageModal.addEventListener("click", function (e) {
+    if (e.target === imageModal) {
+      imageModal.style.display = "none";
+      history.back();
+    }
+  });
+
+  // Listen for popstate event
+  window.addEventListener("popstate", function (event) {
+    if (event.state && event.state.modalOpen) {
+      imageModal.style.display = "none";
+    }
+  });
 });
 
 /* ---------- [추가] 알림 설정 버튼 동작 ---------- */
