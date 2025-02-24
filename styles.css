@@ -111,12 +111,12 @@ header {
   width: 100%;
   aspect-ratio: 4/3;
   background-color: rgba(0, 0, 0, 0.3);
-  border-radius: 8px;
+  border-radius: 2px;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  outline: rgba(100, 100, 100, 0.5) solid 1px;
+
 }
 
 .gallery-item img {
@@ -615,7 +615,7 @@ header {
 }
 /* 드롭다운 버튼 */
 .dropdown-btn {
-  background-color: orange;
+  background-color: rgb(53, 53, 53);
   color: white;
   border: none;
   padding: 10px;
